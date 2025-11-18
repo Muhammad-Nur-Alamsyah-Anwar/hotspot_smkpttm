@@ -45,29 +45,6 @@ Sistem ini dirancang untuk dua jenis pengguna di MikroTik:
 
 ---
 
-## 3. Struktur File
-
-Pastikan susunan folder sebelum diupload adalah sebagai berikut:
-
-```text
-Hotspot_SMKPTTM/
-│
-├── img/
-│   └── logo-smkpttm.png    [Wajib: Logo Sekolah format PNG]
-│
-├── css/
-│   └── style.css           [File Desain/Tampilan]
-│
-├── login.html              [Halaman Depan]
-├── status.html             [Halaman Info User]
-├── alogin.html             [Script Redirect]
-├── logout.html             [Halaman Logout]
-├── error.html              [Halaman Error Default]
-└── README.md               [Dokumentasi Ini]
-```
-
----
-
 ## 4. Panduan Instalasi (Deployment)
 
 Ikuti langkah ini untuk memasang di Router MikroTik:
