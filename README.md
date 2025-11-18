@@ -78,4 +78,3 @@ HTML tidak mengatur kecepatan, Anda harus setting di WinBox:
 - **Masalah Logout:** Jika user klik logout tapi langsung login lagi otomatis, matikan fitur **Cookie**.
   - Caranya: **IP** > **Hotspot** > **Server Profiles** > Tab **Login** > Hilangkan centang **Cookie**.
 - **Gambar Tidak Muncul:** Pastikan nama file logo persis `logo-smkpttm.png` (huruf kecil semua) dan berada di dalam folder `img`.
-- **Ganti Password:** Segera ganti password default `smkpttmsw` dan `smkpttmgr` di WinBox untuk keamanan jaringan sekolah.
