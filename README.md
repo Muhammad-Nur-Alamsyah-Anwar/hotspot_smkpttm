@@ -45,7 +45,7 @@ Sistem ini dirancang untuk dua jenis pengguna di MikroTik:
 
 ---
 
-## 4. Panduan Instalasi (Deployment)
+## 3. Panduan Instalasi (Deployment)
 
 Ikuti langkah ini untuk memasang di Router MikroTik:
 
@@ -73,7 +73,7 @@ HTML tidak mengatur kecepatan, Anda harus setting di WinBox:
 
 ---
 
-## 5. Troubleshooting & Tips
+## 4. Troubleshooting & Tips
 
 - **Masalah Logout:** Jika user klik logout tapi langsung login lagi otomatis, matikan fitur **Cookie**.
   - Caranya: **IP** > **Hotspot** > **Server Profiles** > Tab **Login** > Hilangkan centang **Cookie**.
