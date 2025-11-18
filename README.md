@@ -1,80 +1,76 @@
 # Portal Hotspot SMK Penerbangan Techno Terapan Makassar
 
-Dokumentasi ini berisi panduan lengkap instalasi, fitur, dan manajemen user untuk halaman login Hotspot MikroTik. Proyek ini menggunakan desain *static* (HTML/CSS) yang ringan dan responsif.
+<!-- Badges agar terlihat Professional -->
+![MikroTik](https://img.shields.io/badge/Platform-MikroTik-red?style=for-the-badge&logo=mikrotik&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+
+Template Login Page Hotspot MikroTik yang responsif, ringan, dan bersih. Didesain khusus untuk lingkungan sekolah dengan pemisahan hak akses Siswa dan Guru.
+
+## 📸 Preview Tampilan
+
+| Halaman Login | Halaman Status (Dashboard) |
+|:---:|:---:|
+| <img src="screenshots/login-view.png" width="400" alt="Login Screen"> | <img src="screenshots/status-dashboard.png" width="400" alt="Status Dashboard"> |
+| **Tampilan Awal** | **Info Pemakaian** |
+
+<div align="center">
+  <img src="screenshots/logout-screen.png" width="400" alt="Logout Screen"><br>
+  <b>Halaman Logout</b>
+</div>
 
 ---
 
-## 1. Fitur Utama
+## ✨ Fitur Utama
 
-### A. Halaman Login (`login.html`)
+### 1. Halaman Login (`login.html`)
 - **Responsive Design:** Tampilan otomatis menyesuaikan layar HP siswa, Tablet, maupun Laptop guru.
-- **Auto-Focus:** Kursor otomatis aktif di kolom username saat halaman dibuka.
-- **Feedback Error:** Menampilkan pesan error (warna merah) dari sistem MikroTik jika password salah atau user tidak ditemukan.
-- **Secure Form:** Menggunakan metode POST standar MikroTik dengan perlindungan redirect (`dst` & `popup`).
-- **Informasi Default:** Menampilkan info login default untuk memudahkan penggunaan awal (Siswa/Guru).
+- **Auto-Focus:** Kursor otomatis aktif di kolom username.
+- **Secure:** Info login default disembunyikan dari tampilan publik demi keamanan.
 
-### B. Halaman Status (`status.html`)
-- **Real-time Monitoring:** Menampilkan data sesi yang sedang berjalan:
-  - **IP Address:** Alamat IP perangkat pengguna.
-  - **Traffic Data:** Jumlah Upload / Download yang digunakan.
-  - **Uptime:** Durasi waktu user terkoneksi.
-- **Auto-Refresh:** Halaman otomatis memuat ulang (refresh) setiap **60 detik** untuk memperbarui data pemakaian.
-- **Clean UI:** Tampilan bersih dan fokus pada data penting (tanpa gangguan teks berlebihan).
-- **Logout Aman:** Tombol logout yang memicu pembersihan session cookie.
-
-### C. Sistem Redirect (`alogin.html`)
-- **Anti-Stuck:** Script otomatis yang memindahkan user dari halaman sukses login langsung ke halaman status, mencegah user terjebak di halaman kosong.
+### 2. Halaman Status (`status.html`)
+- **Real-time Monitoring:** Menampilkan IP, Durasi, dan Pemakaian Data.
+- **Auto-Refresh:** Menyegarkan data setiap 60 detik.
+- **Clean UI:** Fokus pada informasi penting tanpa gangguan iklan/teks berlebih.
 
 ---
 
-## 2. Manajemen User (Skenario Sekolah)
+## 📂 Struktur File
 
-Sistem ini dirancang untuk dua jenis pengguna di MikroTik:
+```text
+Hotspot_SMKPTTM/
+│
+├── screenshots/            # Dokumentasi gambar untuk GitHub
+│   ├── login-view.png
+│   ├── status-dashboard.png
+│   └── logout-screen.png
+│
+├── img/                    # Aset gambar untuk Website
+│   └── logo-smkpttm.png
+│
+├── css/                    # Styling
+│   └── style.css
+│
+├── login.html              # Halaman Utama
+├── status.html             # Halaman Dashboard
+├── alogin.html             # Script Redirect
+├── logout.html             # Halaman Logout
+└── ...
+```
 
-### 1. Siswa
-- **Username:** `siswa`
-- **Password:** `smkpttmsw`
-- **Limitasi:** Kecepatan dibatasi (Dikonfigurasi di User Profile MikroTik, misal: 512kbps).
-- **Akses:** Bisa memantau penggunaan data dan durasi online.
+## 🚀 Cara Instalasi
 
-### 2. Guru
-- **Username:** `guru`
-- **Password:** `smkpttmgr`
-- **Limitasi:** **Unlimited** (Prioritas tinggi/tanpa limit kecepatan).
-- **Akses:** Internet full speed untuk kebutuhan mengajar.
+1.  **Download:** Clone repo ini atau download ZIP.
+2.  **Upload:** Masukkan semua file (kecuali folder `screenshots` dan file `.py`) ke dalam folder `hotspot` di MikroTik via WinBox/FTP.
+3.  **Konfigurasi:**
+    * Buat User Profile di WinBox (Limitasi Siswa vs Guru).
+    * Pastikan file logo bernama `logo-smkpttm.png` ada di folder `img`.
 
----
+## 🤝 Kontribusi
 
-## 3. Panduan Instalasi (Deployment)
+Silakan fork repository ini jika ingin mengembangkan fitur tambahan.
 
-Ikuti langkah ini untuk memasang di Router MikroTik:
+## 📄 Lisensi
 
-### Langkah 1: Persiapan
-1. Siapkan file logo sekolah, beri nama `logo-smkpttm.png`.
-2. Masukkan logo ke dalam folder `img/`.
-
-### Langkah 2: Upload ke MikroTik
-1. Buka aplikasi **WinBox**.
-2. Klik menu **Files**.
-3. Cari folder `hotspot` lama, lalu **Backup** (drag & drop ke komputer Anda).
-4. **Upload:** Drag & drop semua isi folder proyek ini (`img`, `css`, `*.html`) ke dalam folder `hotspot` di WinBox. Pastikan file lama tertimpa (*overwrite*).
-
-### Langkah 3: Setting Limitasi (PENTING)
-HTML tidak mengatur kecepatan, Anda harus setting di WinBox:
-
-1. Masuk ke **IP** > **Hotspot** > **User Profiles**.
-2. Buat Profile **Siswa**:
-   - Name: `profil_siswa`
-   - Rate Limit (rx/tx): `512k/512k` (Contoh limit 512kbps).
-3. Buat Profile **Guru**:
-   - Name: `profil_guru`
-   - Rate Limit: Kosongkan (agar Unlimited).
-4. Masuk ke tab **Users**, pastikan user `siswa` menggunakan `profil_siswa` dan user `guru` menggunakan `profil_guru`.
-
----
-
-## 4. Troubleshooting & Tips
-
-- **Masalah Logout:** Jika user klik logout tapi langsung login lagi otomatis, matikan fitur **Cookie**.
-  - Caranya: **IP** > **Hotspot** > **Server Profiles** > Tab **Login** > Hilangkan centang **Cookie**.
-- **Gambar Tidak Muncul:** Pastikan nama file logo persis `logo-smkpttm.png` (huruf kecil semua) dan berada di dalam folder `img`.
+Project ini dilindungi di bawah lisensi [MIT](LICENSE).
