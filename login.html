@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Hotspot - SMK Penerbangan Techno Terapan Makassar</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-card">
+            <div class="logo-area">
+                <!-- Pastikan file logo-smkpttm.png ada di folder img/ -->
+                <img src="img/logo-smkpttm.png" alt="Logo SMK" class="logo" onerror="this.style.display='none';">
+                <h2>Selamat Datang</h2>
+                <h3>Hotspot SMK Penerbangan Techno Terapan Makassar</h3>
+            </div>
+
+            <!-- Area Pesan Error dari MikroTik -->
+            <div class="error-msg">
+                $(if error)
+                <p>$(error)</p>
+                $(endif)
+            </div>
+
+            <!-- Form Login MikroTik -->
+            <form name="login" action="$(link-login-only)" method="post">
+                <input type="hidden" name="dst" value="$(link-orig)">
+                <input type="hidden" name="popup" value="true">
+
+                <div class="input-group">
+                    <label for="username">Username / NIS / NIP</label>
+                    <input type="text" name="username" id="username" placeholder="Masukkan Username" required autocomplete="off">
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Masukkan Password" required>
+                </div>
+
+                <button type="submit" class="btn-login">Masuk / Login</button>
+            </form>
+
+            <!-- Info Box dihapus agar siswa tidak melihat password guru -->
+
+            <div class="footer">
+                &copy; SMK Penerbangan Techno Terapan Makassar
+            </div>
+        </div>
+    </div>
+
+    <!-- Script User Focus -->
+    <script type="text/javascript">
+        document.login.username.focus();
+    </script>
+</body>
+</html>

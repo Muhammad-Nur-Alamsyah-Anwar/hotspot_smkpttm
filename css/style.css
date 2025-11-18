@@ -1,0 +1,187 @@
+/* Reset dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f4f8; /* Abu-abu kebiruan muda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-card {
+    background: white;
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Logo & Header */
+.logo-area {
+    margin-bottom: 25px;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.logo-area h2 {
+    color: #0056b3; /* Biru SMK */
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.logo-area h3 {
+    color: #666;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+/* Form Styles */
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #444;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+/* Tombol */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #0056b3; /* Biru Utama */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #004494;
+}
+
+.btn-logout {
+    width: 100%;
+    padding: 12px;
+    background-color: #d9534f; /* Merah untuk Logout */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-logout:hover {
+    background-color: #c9302c;
+}
+
+/* Info Box */
+.info-box {
+    background-color: #e9f5ff;
+    border: 1px solid #b8daff;
+    color: #004085;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    text-align: left;
+}
+
+.error-msg {
+    color: red;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Status Table */
+.status-table {
+    width: 100%;
+    margin: 15px 0;
+    border-collapse: collapse;
+}
+
+.status-table td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.status-table tr td:last-child {
+    text-align: right;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.welcome-text {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.alert-box {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 10px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+/* Mobile Responsiveness */
+@media only screen and (max-width: 480px) {
+    .login-card {
+        padding: 20px;
+    }
+    .logo-area h2 {
+        font-size: 1.3rem;
+    }
+}

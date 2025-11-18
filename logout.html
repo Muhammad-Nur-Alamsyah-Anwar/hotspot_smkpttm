@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - SMK Penerbangan</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-card">
+            <div class="logo-area">
+                <img src="img/logo-smkpttm.png" alt="Logo SMK" class="logo" onerror="this.style.display='none';">
+                <h3>Anda Telah Logout</h3>
+            </div>
+
+            <div class="status-info">
+                <p>Terima kasih telah menggunakan layanan internet sekolah.</p>
+                
+                <table class="status-table">
+                    <tr>
+                        <td>User</td>
+                        <td>$(username)</td>
+                    </tr>
+                    <tr>
+                        <td>Durasi Pemakaian</td>
+                        <td>$(uptime)</td>
+                    </tr>
+                    <tr>
+                        <td>Total Data</td>
+                        <td>$(bytes-in-nice) / $(bytes-out-nice)</td>
+                    </tr>
+                </table>
+
+                <br>
+                <form action="$(link-login)" name="login" method="post">
+                    <button type="submit" class="btn-login">Login Kembali</button>
+                </form>
+            </div>
+
+            <div class="footer">
+                &copy; SMK Penerbangan Techno Terapan Makassar
+            </div>
+        </div>
+    </div>
+</body>
+</html>

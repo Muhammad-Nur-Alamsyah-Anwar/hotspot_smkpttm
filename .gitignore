@@ -1,0 +1,15 @@
+# Mengabaikan file sistem operasi (sampah)
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Mengabaikan cache Python (jika menjalankan script preview)
+__pycache__/
+*.py[cod]
+
+# Mengabaikan folder pengaturan editor (VS Code, dll)
+.vscode/
+.idea/
+
+# Mengabaikan file log
+*.log

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=$(link-status)">
+</head>
+<body>
+    <!-- File ini berfungsi untuk mengarahkan user langsung ke halaman status setelah login sukses -->
+    <script language="JavaScript">
+        function startClock() {
+            location.href = '$(link-status)';
+        }
+    </script>
+    <table width="100%" height="100%">
+        <tr>
+            <td align="center" valign="middle">
+                <h3>Login Berhasil!</h3>
+                <p>Mengalihkan ke halaman status...</p>
+                <p>Jika tidak berpindah otomatis, <a href="$(link-status)">klik di sini</a>.</p>
+            </td>
+        </tr>
+    </table>
+    <script language="JavaScript">
+        startClock();
+    </script>
+</body>
+</html>

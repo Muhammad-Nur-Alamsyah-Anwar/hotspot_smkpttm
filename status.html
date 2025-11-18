@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Refresh otomatis setiap 60 detik -->
+    <meta http-equiv="refresh" content="60">
+    <title>Status Koneksi - SMK Penerbangan</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-card">
+            <div class="logo-area">
+                <img src="img/logo-smkpttm.png" alt="Logo SMK" class="logo" onerror="this.style.display='none';">
+                <h3>Status Koneksi</h3>
+            </div>
+
+            <div class="status-info">
+                <p class="welcome-text">Halo, <strong>$(username)</strong>!</p>
+                
+                <table class="status-table">
+                    <tr>
+                        <td>IP Address</td>
+                        <td>$(ip)</td>
+                    </tr>
+                    <tr>
+                        <td>Pemakaian Data <br><small>(Up / Down)</small></td>
+                        <td>$(bytes-in-nice) / $(bytes-out-nice)</td>
+                    </tr>
+                    <tr>
+                        <td>Durasi Online</td>
+                        <td>$(uptime)</td>
+                    </tr>
+                </table>
+
+                <div class="alert-box">
+                    <p>Koneksi lancar. Halaman ini akan refresh otomatis setiap 1 menit.</p>
+                </div>
+
+                <!-- Form Logout -->
+                <form action="$(link-logout)" name="logout" method="post">
+                    <input type="hidden" name="erase-cookie" value="on">
+                    <button type="submit" class="btn-logout">Logout / Selesai</button>
+                </form>
+            </div>
+
+            <div class="footer">
+                &copy; SMK Penerbangan Techno Terapan Makassar
+            </div>
+        </div>
+    </div>
+</body>
+</html>
